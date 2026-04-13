@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /*min view on browser always in vh*/
+  min-height: 100vh;
+  /*line height is the space bwetween lines*/
+  line-height: 1.5;
+}
+
+/*mobile first*/
+
+main {
+  display: flex;
+  border-bottom: 2px solid lightgrey;
+  padding-bottom: 10%;
+  padding-top: 5%;
+}
+.site-header {
+  /*everything contained in the header will move horizontal beacue the flex takes all children*/
+  display: flex;
+  /*so we will want all in a column*/
+  flex-direction: column;
+  /*we want to mov eit to the center*/
+  align-items: center;
+  padding: 4%;
+  border-bottom: 2px solid lightgray;
+}
+.brand {
+  /*adding some space at the bottom*/
+  margin-bottom: 1rem;
+  font-size: large;
+  color: brown;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+.site-nav {
+  /*will take the 100% of the size of the parent*/
+  width: 100%;
+  /*inside the this parent i want to move the list to the center*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*give some space between the elements*/
+  gap: 0.5rem;
+}
+.site-nav a {
+  display: flex;
+  /*removes the hyperlink*/
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+.side-bar {
+  padding: 3%;
+  border-bottom: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap-reverse; /* Allows items to move to the next line */
+  padding: 0;
+  gap: 7px;
+  border-radius: 10px 10px 10px 10px;
+}
+li {
+  flex: 1 1 45%;
+  text-align: center;
+  background-color: lightcoral;
+  color: aliceblue;
+  font-weight: bolder;
+}
+.Best-Bakery {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Bakery {
+  padding-bottom: 7%;
+}
+p {
+  padding-bottom: 3%;
+}
+.testimonial {
+  padding-bottom: 6%;
+  padding-top: 4%;
+  margin: 40px;
+}
+.testimonial {
+  background-color: lightcyan;
+  padding: 20px;
+  /*will round the all 4 corners 30px*/
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 2px 2px 2px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3%;
+  background-color: black;
+  color: aliceblue;
+}
+/*desktop view from here*/
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0rem;
+  }
+  .site-header,
+  footer {
+    width: 100%;
+  }
+  .site-header {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding-bottom: 0%;
+  }
+  .site-nav {
+    justify-content: right;
+    align-items: center;
+    margin-top: -25px;
+  }
+  .bran {
+    margin: 0rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+  }
+}
